@@ -21,6 +21,8 @@ spring:
         enable_lazy_load_no_trans: true
         temp:
           use_jdbc_metadata_defaults: false
+allowed:
+  origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:5174,http://localhost:5175}
 
 clipdrop:
   api:
