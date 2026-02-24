@@ -9,7 +9,7 @@ const AppContextProvider = (props) => {
     const [showLogin, setShowLogin] = useState(false);
     const [credits, setCredits] = useState(0);
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:8082";
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://ai-image-generator-1-i0ct.onrender.com";
 
     const loadCreditsData = async () => {
         if (user) {
