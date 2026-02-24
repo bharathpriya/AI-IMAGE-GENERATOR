@@ -11,6 +11,6 @@ app.use(cors())
 await connectDB()
 
 
-app.get('/', (req, res)=> res.send("API Working "))
+app.get('/', (req, res)=> res.send("API Whis  "))
 
 app.listen(PORT, ()=> console.log('Server running on port ' + PORT));
