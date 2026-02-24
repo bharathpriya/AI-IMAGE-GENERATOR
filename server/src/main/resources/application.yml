@@ -9,11 +9,11 @@ spring:
     password: ${SPRING_DATASOURCE_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      initialization-fail-timeout: 0
+      initialization-fail-timeout: -1
   jpa:
     database: mysql
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
