@@ -1,0 +1,21 @@
+# Dependency directories
+node_modules/
+**/target/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Environment variables (Sensitive data)
+.env
+.env.local
+
+# Build outputs
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+backend.log
