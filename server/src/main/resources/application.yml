@@ -4,9 +4,9 @@ spring:
   application:
     name: imgify-server
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/imgify}
-    username: ${SPRING_DATASOURCE_USERNAME:root}
-    password: ${SPRING_DATASOURCE_PASSWORD:}
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:imgify}
+    username: ${DB_USER:root}
+    password: ${DB_PASS:}
     hikari:
       initialization-fail-timeout: -1
   jpa:
