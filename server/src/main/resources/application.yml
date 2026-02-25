@@ -4,7 +4,7 @@ spring:
   application:
     name: imgify-server
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:imgify}
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:imgify}?useSSL=true&requireSSL=true&verifyServerCertificate=false
     username: ${DB_USER:root}
     password: ${DB_PASS:}
     hikari:
