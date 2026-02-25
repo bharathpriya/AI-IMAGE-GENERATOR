@@ -3,6 +3,7 @@ import { assets } from '../assets/assets'
 import { motion } from "framer-motion"
 import { AppContext } from '../context/AppContext'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Result = () => {
 
@@ -11,6 +12,7 @@ const Result = () => {
     const [loading, setLoading] = useState(false)
     const [input, setInput] = useState('')
 
+    const navigate = useNavigate()
     const { backendUrl, user, setCredits } = useContext(AppContext)
 
     const onSubmitHandler = async (e) => {
@@ -31,6 +33,9 @@ const Result = () => {
                 setCredits(data.credits);
             } else {
                 alert(data.message);
+                if (data.message === "No credits left") {
+                    navigate('/buy')
+                }
             }
         } catch (error) {
             alert(error.response?.data?.message || error.message);

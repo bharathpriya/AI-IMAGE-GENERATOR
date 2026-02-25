@@ -56,4 +56,17 @@ public class UserController {
             return ResponseEntity.badRequest().body(Map.of("success", false, "message", e.getMessage()));
         }
     }
+
+    @PostMapping("/add-credits")
+    public ResponseEntity<?> addCredits(@RequestBody Map<String, Object> request) {
+        try {
+            Long userId = Long.valueOf(request.get("userId").toString());
+            int credits = Integer.parseInt(request.get("credits").toString());
+            User user = userService.getUserById(userId);
+            User updatedUser = userService.updateUserCredits(userId, user.getCredits() + credits);
+            return ResponseEntity.ok(Map.of("success", true, "credits", updatedUser.getCredits()));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("success", false, "message", e.getMessage()));
+        }
+    }
 }
